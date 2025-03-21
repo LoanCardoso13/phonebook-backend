@@ -58,6 +58,8 @@ app.post('/api/persons', (request, response) => {
   const newId = Math.floor(Math.random() * 1000000);
   const newPerson = request.body;
 
+  console.log(newPerson);
+
   if (isMissingInfo(newPerson)) {
     return response.status(400).json({error: 'missing personal information'})
   } else if (isRepeated(newPerson)) {
