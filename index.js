@@ -1,5 +1,5 @@
 const express = require('express');
-const morgan = require('morgan')
+const morgan = require('morgan');
 const cors = require('cors');
 
 const app = express();
@@ -7,6 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(morgan('tiny'));
 app.use(cors());
+app.use(express.static('dist'));
 
 const persons = [
     { 
